@@ -30,11 +30,11 @@ public class frmListado extends javax.swing.JFrame {
         Controller gestor = new Controller();
         ArrayList<DTOVisitas> visita = gestor.obtenerVisitasDTO();
         DefaultTableModel tabla = new DefaultTableModel();
-        tabla.setColumnIdentifiers(new Object[] {"Nombre Paciente", "Nombre Visitante", "Nombre Recepcionista", "Duracion"});
+        tabla.setColumnIdentifiers(new Object[] {"Paciente", "Visitante", "Recepcionista", "Duracion"});
         
         for (DTOVisitas dTOVisitas : visita) 
         {
-            tabla.addRow(new Object [] {dTOVisitas.getNombrePaciente(), dTOVisitas.getNombreVisitante(), dTOVisitas.getNombreRecepcionista(), dTOVisitas.getDuracion()});
+            tabla.addRow(new Object [] {dTOVisitas.getPaciente(), dTOVisitas.getVisitante(), dTOVisitas.getRecepcionista(), dTOVisitas.getDuracion()});
         }
         tblListado.setModel(tabla);
     }

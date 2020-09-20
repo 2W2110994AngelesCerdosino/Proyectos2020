@@ -47,8 +47,8 @@ public class Controller
      {
          try 
          {
-             if(con!=null && !con.isClosed()) //VER ERROR
-                 con.close()
+             if(con!=null && !con.isClosed()) 
+                 con.close();
          } 
          
          catch (Exception e)
@@ -65,9 +65,10 @@ public class Controller
          abrirConexion();
          PreparedStatement ps = con.prepareStatement("INSERT INTO Visitas VALUES (?,?,?,?)");
          ps.setInt(1, v.getPaciente().getIdPaciente());
-         ps.setInt(2, v.);
+         ps.setInt(2, v.getEmpleado().getLegajo());
          ps.setString(3, v.getNombre());
          ps.setInt(4, v.getDuracion());
+         ps.executeUpdate();
          ps.close();
                  
          } 
@@ -159,20 +160,21 @@ public class Controller
          {
              abrirConexion();
              Statement st = con.createStatement();
-             ResultSet rs = st.executeQuery("SELECT V.IdVisita, P.Nombre as Nombre Paciente, V.Nombre as Nombre Visita, E.Nombre as Nombre Empleado, V.Duracion "
+             String sql = "SELECT V.IdVisita, P.Nombre as Paciente, V.Nombre as Visitante, E.Nombre as Empleado, V.Duracion "
                      + "                     FROM Visitas V JOIN Pacientes P "
                      + "                     ON V.IdPaciente = P.IdPaciente "
                      + "                     JOIN Empleados E "
                      + "                     ON E.Legajo = V.LegajoRecepcionista "
-                     + "                     ORDER BY P.Nombre");
+                     + "                     ORDER BY P.Nombre";
+             ResultSet rs = st.executeQuery(sql);
              while(rs.next())
              {
                 int idVisita = rs.getInt("IdVisita");
-                String NombrePaciente = rs.getString("Nombre Paciente");
-                String NombreVisita = rs.getString("Nombre Visita");
-                String NombreEmpleado = rs.getString("Nombre Empleado");
+                String Paciente = rs.getString("Paciente");
+                String Visita = rs.getString("Visitante");
+                String Empleado = rs.getString("Empleado");
                 int Duracion = rs.getInt("Duracion");
-                DTOVisitas v = new DTOVisitas(idVisita,NombrePaciente, NombreVisita, NombreVisita, Duracion);
+                DTOVisitas v = new DTOVisitas(idVisita,Paciente, Visita, Empleado, Duracion);
                 lista.add(v);
                 
              }

@@ -68,6 +68,10 @@ public class frmAlta extends javax.swing.JFrame {
         cborecepcionista = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 102, 51));
+        setName("ALTA"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(400, 500));
+        setSize(new java.awt.Dimension(500, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnregistrar.setText("Registrar");
@@ -76,7 +80,7 @@ public class frmAlta extends javax.swing.JFrame {
                 btnregistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 236, -1, -1));
+        getContentPane().add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
 
         btnlistado.setText("Listado");
         btnlistado.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +88,7 @@ public class frmAlta extends javax.swing.JFrame {
                 btnlistadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnlistado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
+        getContentPane().add(btnlistado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
 
         btnreportes.setText("Reportes");
         btnreportes.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +96,7 @@ public class frmAlta extends javax.swing.JFrame {
                 btnreportesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnreportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
+        getContentPane().add(btnreportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Candara", 1, 18)); // NOI18N
         jLabel3.setText("Alta de Visitas");
@@ -108,9 +112,9 @@ public class frmAlta extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Candara", 0, 12)); // NOI18N
         jLabel9.setText("Duracion: ");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 150, -1));
-        getContentPane().add(txtduracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 150, -1));
+        getContentPane().add(txtduracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 150, -1));
 
         getContentPane().add(cbopaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 150, -1));
 
@@ -139,7 +143,7 @@ public class frmAlta extends javax.swing.JFrame {
             String nombre = txtnombre.getText();
             int duracion = Integer.parseInt(txtduracion.getText());
 
-            Visitas v = new Visitas(0, duracion, nombre, duracion, paciente);
+            Visitas v = new Visitas(0, empleado, paciente, nombre, duracion);
             Controller gestor = new Controller();
             gestor.agregarVisita(v);
 

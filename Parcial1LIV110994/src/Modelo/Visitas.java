@@ -12,20 +12,20 @@ package Modelo;
 public class Visitas 
 {
  private int idVisita;
-    private int legajoRecepcionista;
+    private Empleados empleado;
+    private Pacientes paciente;
     private String nombre;
     private int duracion;
-    private Pacientes paciente;
-
-    public Visitas (int idVisita, int legajoRecepcionista, String nombre, int duracion, Pacientes paciente) {
-        this.idVisita = idVisita;
-        this.legajoRecepcionista = legajoRecepcionista;
-        this.nombre = nombre;
-        this.duracion = duracion;
-        this.paciente = paciente;
-    }
     
     public Visitas (){};
+
+    public Visitas(int idVisita, Empleados empleado, Pacientes paciente, String nombre, int duracion) {
+        this.idVisita = idVisita;
+        this.empleado = empleado;
+        this.paciente = paciente;
+        this.nombre = nombre;
+        this.duracion = duracion;
+    }
 
     public int getIdVisita() {
         return idVisita;
@@ -35,12 +35,20 @@ public class Visitas
         this.idVisita = idVisita;
     }
 
-    public int getLegajoRecepcionista() {
-        return legajoRecepcionista;
+    public Empleados getEmpleado() {
+        return empleado;
     }
 
-    public void setLegajoRecepcionista(int legajoRecepcionista) {
-        this.legajoRecepcionista = legajoRecepcionista;
+    public void setEmpleado(Empleados empleado) {
+        this.empleado = empleado;
+    }
+
+    public Pacientes getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Pacientes paciente) {
+        this.paciente = paciente;
     }
 
     public String getNombre() {
@@ -59,11 +67,6 @@ public class Visitas
         this.duracion = duracion;
     }
 
-    public Pacientes getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Pacientes paciente) {
-        this.paciente = paciente;
-    }    
+    
+    
 }

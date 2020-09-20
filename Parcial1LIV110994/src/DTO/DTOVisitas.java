@@ -13,20 +13,20 @@ public class DTOVisitas
 {
 //Nombre del paciente, nombre del visitante, nombre del recepcionista, duración
     private int idVisita;
-    private String nombrePaciente;
-    private String nombreVisitante;
-    private String nombreRecepcionista;
+    private String Paciente;
+    private String Visitante;
+    private String Recepcionista;
     private int duracion;
+    
+    public DTOVisitas () {};
 
-    public DTOVisitas(int idVisita, String nombrePaciente, String nombreVisitante, String nombreRecepcionista, int duracion) {
+    public DTOVisitas(int idVisita, String Paciente, String Visitante, String Recepcionista, int duracion) {
         this.idVisita = idVisita;
-        this.nombrePaciente = nombrePaciente;
-        this.nombreVisitante = nombreVisitante;
-        this.nombreRecepcionista = nombreRecepcionista;
+        this.Paciente = Paciente;
+        this.Visitante = Visitante;
+        this.Recepcionista = Recepcionista;
         this.duracion = duracion;
     }
-    
-    public DTOVisitas(){};
 
     public int getIdVisita() {
         return idVisita;
@@ -36,29 +36,28 @@ public class DTOVisitas
         this.idVisita = idVisita;
     }
 
-    
-    public String getNombrePaciente() {
-        return nombrePaciente;
+    public String getPaciente() {
+        return Paciente;
     }
 
-    public void setNombrePaciente(String nombrePaciente) {
-        this.nombrePaciente = nombrePaciente;
+    public void setPaciente(String Paciente) {
+        this.Paciente = Paciente;
     }
 
-    public String getNombreVisitante() {
-        return nombreVisitante;
+    public String getVisitante() {
+        return Visitante;
     }
 
-    public void setNombreVisitante(String nombreVisitante) {
-        this.nombreVisitante = nombreVisitante;
+    public void setVisitante(String Visitante) {
+        this.Visitante = Visitante;
     }
 
-    public String getNombreRecepcionista() {
-        return nombreRecepcionista;
+    public String getRecepcionista() {
+        return Recepcionista;
     }
 
-    public void setNombreRecepcionista(String nombreRecepcionista) {
-        this.nombreRecepcionista = nombreRecepcionista;
+    public void setRecepcionista(String Recepcionista) {
+        this.Recepcionista = Recepcionista;
     }
 
     public int getDuracion() {
@@ -68,6 +67,8 @@ public class DTOVisitas
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
+
+    
     
     
     
