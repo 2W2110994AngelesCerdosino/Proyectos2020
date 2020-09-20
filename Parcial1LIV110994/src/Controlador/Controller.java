@@ -48,7 +48,7 @@ public class Controller
          try 
          {
              if(con!=null && !con.isClosed()) //VER ERROR
-                 con.close();
+                 con.close()
          } 
          
          catch (Exception e)
@@ -63,9 +63,9 @@ public class Controller
          try 
          {
          abrirConexion();
-         PreparedStatement ps = con.prepareStatement("INSERT INTO Visitas (idPaciente, LegajoRecepcionsta, Nombre, Duracion) VALUES (?,?,?,?)");
+         PreparedStatement ps = con.prepareStatement("INSERT INTO Visitas VALUES (?,?,?,?)");
          ps.setInt(1, v.getPaciente().getIdPaciente());
-         ps.setInt(2, v.getLegajoRecepcionista());
+         ps.setInt(2, v.);
          ps.setString(3, v.getNombre());
          ps.setInt(4, v.getDuracion());
          ps.close();
@@ -154,24 +154,30 @@ public class Controller
      //Nombre del paciente, nombre del visitante, nombre del recepcionista, duración
      public ArrayList<DTOVisitas> obtenerVisitasDTO()
      {
-         ArrayList<DTOVisitas> lista = new ArrayList<>();
+         ArrayList<DTOVisitas> lista = new ArrayList<DTOVisitas>();
          try
          {
              abrirConexion();
              Statement st = con.createStatement();
-             ResultSet rs = st.executeQuery("SELECT P.Nombre AS P_Nombre, V.Nombre as V_Nombre, E.Nombre AS E_Nombre, Duracion FROM Visitas V JOIN Pacientes P ON V.IdPaciente = P.IdPaciente JOIN Empleados E ON E.Legajo = V.LegajoRecepcionista ORDER BY P.Nombre");
+             ResultSet rs = st.executeQuery("SELECT V.IdVisita, P.Nombre as Nombre Paciente, V.Nombre as Nombre Visita, E.Nombre as Nombre Empleado, V.Duracion "
+                     + "                     FROM Visitas V JOIN Pacientes P "
+                     + "                     ON V.IdPaciente = P.IdPaciente "
+                     + "                     JOIN Empleados E "
+                     + "                     ON E.Legajo = V.LegajoRecepcionista "
+                     + "                     ORDER BY P.Nombre");
              while(rs.next())
              {
-                String P_Nombre = rs.getString("P_Nombre");
-                String V_Nombre = rs.getString("V_Nombre");
-                String E_Nombre = rs.getString("E_Nombre");
+                int idVisita = rs.getInt("IdVisita");
+                String NombrePaciente = rs.getString("Nombre Paciente");
+                String NombreVisita = rs.getString("Nombre Visita");
+                String NombreEmpleado = rs.getString("Nombre Empleado");
                 int Duracion = rs.getInt("Duracion");
-                DTOVisitas v = new DTOVisitas(E_Nombre, E_Nombre, E_Nombre, Duracion);
+                DTOVisitas v = new DTOVisitas(idVisita,NombrePaciente, NombreVisita, NombreVisita, Duracion);
                 lista.add(v);
                 
              }
              rs.close();
-              
+             st.close();   
              
          }
           catch (Exception e) 

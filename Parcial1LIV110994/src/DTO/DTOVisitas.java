@@ -12,21 +12,31 @@ package DTO;
 public class DTOVisitas 
 {
 //Nombre del paciente, nombre del visitante, nombre del recepcionista, duración
+    private int idVisita;
     private String nombrePaciente;
     private String nombreVisitante;
     private String nombreRecepcionista;
     private int duracion;
 
-    public DTOVisitas(String nombrePaciente, String nombreVisitante, String nombreRecepcionista, int duracion) {
+    public DTOVisitas(int idVisita, String nombrePaciente, String nombreVisitante, String nombreRecepcionista, int duracion) {
+        this.idVisita = idVisita;
         this.nombrePaciente = nombrePaciente;
         this.nombreVisitante = nombreVisitante;
         this.nombreRecepcionista = nombreRecepcionista;
         this.duracion = duracion;
     }
     
-    
     public DTOVisitas(){};
 
+    public int getIdVisita() {
+        return idVisita;
+    }
+
+    public void setIdVisita(int idVisita) {
+        this.idVisita = idVisita;
+    }
+
+    
     public String getNombrePaciente() {
         return nombrePaciente;
     }
