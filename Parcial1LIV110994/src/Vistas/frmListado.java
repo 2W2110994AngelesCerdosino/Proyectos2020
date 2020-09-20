@@ -16,7 +16,8 @@ import javax.swing.table.DefaultTableModel;
  * @author NotebookSFC
  */
 public class frmListado extends javax.swing.JFrame {
-
+        private frmAlta ventanaAlta;
+        private frmReporte ventanaReporte;
     /**
      * Creates new form frmListado
      */
@@ -51,10 +52,13 @@ public class frmListado extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblListado = new javax.swing.JTable();
+        btnvoleralta = new javax.swing.JButton();
+        btnirreportes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Listado");
+        jLabel1.setFont(new java.awt.Font("Candara", 1, 18)); // NOI18N
+        jLabel1.setText("Listado de Pacientes por Visita");
 
         tblListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,31 +73,77 @@ public class frmListado extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblListado);
 
+        btnvoleralta.setFont(new java.awt.Font("Candara", 0, 12)); // NOI18N
+        btnvoleralta.setText("Volver a Alta");
+        btnvoleralta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvoleraltaActionPerformed(evt);
+            }
+        });
+
+        btnirreportes.setFont(new java.awt.Font("Candara", 0, 12)); // NOI18N
+        btnirreportes.setText("Ir a Reportes");
+        btnirreportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnirreportesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addGap(61, 61, 61)
+                .addComponent(btnvoleralta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnirreportes)
+                .addGap(108, 108, 108))
             .addGroup(layout.createSequentialGroup()
-                .addGap(275, 275, 275)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(138, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnvoleralta)
+                            .addComponent(btnirreportes))
+                        .addGap(69, 69, 69))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnvoleraltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoleraltaActionPerformed
+        if(ventanaAlta == null){
+            ventanaAlta = new frmAlta();
+            ventanaAlta.setVisible(true);
+        }
+
+    }//GEN-LAST:event_btnvoleraltaActionPerformed
+
+    private void btnirreportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnirreportesActionPerformed
+      if(ventanaReporte == null){
+            ventanaReporte = new frmReporte();
+      }
+            ventanaReporte.setVisible(true);
+    }//GEN-LAST:event_btnirreportesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,6 +181,8 @@ public class frmListado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnirreportes;
+    private javax.swing.JButton btnvoleralta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblListado;
