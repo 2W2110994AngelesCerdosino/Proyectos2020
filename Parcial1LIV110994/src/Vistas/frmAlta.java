@@ -66,6 +66,7 @@ public class frmAlta extends javax.swing.JFrame {
         cbopaciente = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         cborecepcionista = new javax.swing.JComboBox<>();
+        btnvoleralta1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 51));
@@ -80,7 +81,7 @@ public class frmAlta extends javax.swing.JFrame {
                 btnregistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
+        getContentPane().add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         btnlistado.setText("Listado");
         btnlistado.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +89,7 @@ public class frmAlta extends javax.swing.JFrame {
                 btnlistadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnlistado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
+        getContentPane().add(btnlistado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, -1));
 
         btnreportes.setText("Reportes");
         btnreportes.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +97,7 @@ public class frmAlta extends javax.swing.JFrame {
                 btnreportesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnreportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
+        getContentPane().add(btnreportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Candara", 1, 18)); // NOI18N
         jLabel3.setText("Alta de Visitas");
@@ -124,6 +125,15 @@ public class frmAlta extends javax.swing.JFrame {
 
         getContentPane().add(cborecepcionista, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 150, -1));
 
+        btnvoleralta1.setFont(new java.awt.Font("Candara", 0, 12)); // NOI18N
+        btnvoleralta1.setText("Salir");
+        btnvoleralta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvoleralta1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnvoleralta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -150,6 +160,10 @@ public class frmAlta extends javax.swing.JFrame {
         
             JOptionPane.showMessageDialog(null, "Registro exitoso!");
     }//GEN-LAST:event_btnregistrarActionPerformed
+
+    private void btnvoleralta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoleralta1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnvoleralta1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,6 +204,7 @@ public class frmAlta extends javax.swing.JFrame {
     private javax.swing.JButton btnlistado;
     private javax.swing.JButton btnregistrar;
     private javax.swing.JButton btnreportes;
+    private javax.swing.JButton btnvoleralta1;
     private javax.swing.JComboBox<String> cbopaciente;
     private javax.swing.JComboBox<String> cborecepcionista;
     private javax.swing.JLabel jLabel10;

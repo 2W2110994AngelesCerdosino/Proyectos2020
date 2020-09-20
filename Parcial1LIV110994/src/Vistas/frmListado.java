@@ -54,6 +54,7 @@ public class frmListado extends javax.swing.JFrame {
         tblListado = new javax.swing.JTable();
         btnvoleralta = new javax.swing.JButton();
         btnirreportes = new javax.swing.JButton();
+        btnvoleralta1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -89,6 +90,14 @@ public class frmListado extends javax.swing.JFrame {
             }
         });
 
+        btnvoleralta1.setFont(new java.awt.Font("Candara", 0, 12)); // NOI18N
+        btnvoleralta1.setText("Salir");
+        btnvoleralta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvoleralta1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,8 +115,11 @@ public class frmListado extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(253, 253, 253)
+                        .addComponent(btnvoleralta1)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +130,9 @@ public class frmListado extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(138, Short.MAX_VALUE))
+                        .addGap(75, 75, 75)
+                        .addComponent(btnvoleralta1)
+                        .addContainerGap(40, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -144,6 +158,10 @@ public class frmListado extends javax.swing.JFrame {
       }
             ventanaReporte.setVisible(true);
     }//GEN-LAST:event_btnirreportesActionPerformed
+
+    private void btnvoleralta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoleralta1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnvoleralta1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +201,7 @@ public class frmListado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnirreportes;
     private javax.swing.JButton btnvoleralta;
+    private javax.swing.JButton btnvoleralta1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblListado;
