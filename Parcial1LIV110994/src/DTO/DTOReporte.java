@@ -12,11 +12,11 @@ package DTO;
 public class DTOReporte 
 {
     private String nombre;
-    private int visitasCantidad;
+    private int Cantidad;
 
-    public DTOReporte(String nombre, int visitasCantidad) {
+    public DTOReporte(String nombre, int Cantidad) {
         this.nombre = nombre;
-        this.visitasCantidad = visitasCantidad;
+        this.Cantidad = Cantidad;
     }
 
     public String getNombre() {
@@ -27,12 +27,12 @@ public class DTOReporte
         this.nombre = nombre;
     }
 
-    public int getVisitasCantidad() {
-        return visitasCantidad;
+    public int getCantidad() {
+        return Cantidad;
     }
 
-    public void setVisitasCantidad(int visitasCantidad) {
-        this.visitasCantidad = visitasCantidad;
+    public void setCantidad(int Cantidad) {
+        this.Cantidad = Cantidad;
     }
     
     

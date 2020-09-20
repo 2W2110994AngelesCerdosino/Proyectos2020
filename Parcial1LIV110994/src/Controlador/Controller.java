@@ -188,7 +188,7 @@ public class Controller
      
      // SELECT P.Nombre,COUNT(*) AS Q_Visitantes FROM Visitas V JOIN Pacientes P ON V.IdPaciente = P.IdPaciente GROUP BY P.Nombre
      
-     public ArrayList<DTOReporte> obtenerReporteDTO()
+     public ArrayList<DTOReporte> obtenerVisitantePorPaciente()
      {
          ArrayList<DTOReporte> lista = new ArrayList<>();
          try
