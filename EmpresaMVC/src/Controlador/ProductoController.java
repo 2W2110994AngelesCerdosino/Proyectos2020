@@ -14,9 +14,9 @@ import DTO.DTOVentaFiltro;
 
 
 public class ProductoController {
-    public  String CONN = "jdbc:sqlserver://KEYROLI-DESKTOP:1433;databaseName=EMPRESA";
-    private String USER = "sa";
-    private String PASS = "Oliver88$";
+    public  String CONN = "jdbc:sqlserver://DESKTOP:1433;databaseName=EMPRESA";
+    private String USER = "se";
+    private String PASS = "123456";
     
     //open conection
     private Connection con;
